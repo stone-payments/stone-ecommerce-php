@@ -54,7 +54,6 @@ try
         ->setCreditCardOperation(\Gateway\One\DataContract\Enum\CreditCardOperationEnum::AUTH_AND_CAPTURE)
         ->setAmountInCents(150000)
         ->setCreditCard($creditCard);
-        ;
 
     // Cria um objeto ApiClient
     $apiClient = new \Gateway\ApiClient();
