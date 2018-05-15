@@ -21,6 +21,11 @@ class BoletoTransactionOptions extends BaseObject
     protected $DaysToAddInBoletoExpirationDate;
 
     /**
+     * @var string URL de retorno webhook
+     */
+    protected $NotificationUrl;
+
+    /**
      * @return string
      */
     public function getCurrencyIso()
@@ -54,6 +59,27 @@ class BoletoTransactionOptions extends BaseObject
     public function setDaysToAddInBoletoExpirationDate($daysToAddInBoletoExpirationDate)
     {
         $this->DaysToAddInBoletoExpirationDate = $daysToAddInBoletoExpirationDate;
+
+        return $this;
+    }
+
+    /**
+     *
+     * @return string
+     */
+    public function getNotificationUrl()
+    {
+        return $this->NotificationUrl;
+    }
+
+    /**
+     * @param string $NotificationUrl
+     *
+     * @return $this
+     */
+    public function setNotificationUrl($NotificationUrl)
+    {
+        $this->NotificationUrl = $NotificationUrl;
 
         return $this;
     }
