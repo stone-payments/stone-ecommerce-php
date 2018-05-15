@@ -44,6 +44,11 @@ class CreditCardTransactionOptions extends BaseObject
     protected $InterestRate;
 
     /**
+     * @var string URL de retorno webhook
+     */
+    protected $NotificationUrl;
+
+    /**
      * @return string
      */
     public function getCurrencyIso()
@@ -153,6 +158,27 @@ class CreditCardTransactionOptions extends BaseObject
     public function setInterestRate($interestRate)
     {
         $this->InterestRate = $interestRate;
+
+        return $this;
+    }
+
+    /**
+     *
+     * @return string
+     */
+    public function getNotificationUrl()
+    {
+        return $this->NotificationUrl;
+    }
+
+    /**
+     * @param string $NotificationUrl
+     *
+     * @return $this
+     */
+    public function setNotificationUrl($NotificationUrl)
+    {
+        $this->NotificationUrl = $NotificationUrl;
 
         return $this;
     }
