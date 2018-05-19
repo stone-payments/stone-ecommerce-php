@@ -1,17 +1,23 @@
-<?php
-
-namespace Gateway\One;
+<?php namespace Gateway\One;
 
 use Gateway\One\DataContract\Enum\CreditCardBrandEnum;
 use Gateway\One\DataContract\Request\CreateSaleRequestData\CreditCard;
 use Gateway\One\Helper\CreditCardHelper;
 
-class CreditCardHelperTest extends \PHPUnit_Framework_TestCase
+class CreditCardHelperTest extends \PHPUnit\Framework\TestCase
 {
     public function testCreateCreditCard_Failure()
     {
-        $creditCard = CreditCardHelper::createCreditCard("", "", "", "");
-        $this->assertFalse($creditCard);
+        try 
+        {
+            $creditCard = CreditCardHelper::createCreditCard("", "", "", "");        
+            $this->assertFalse($creditCard);
+        } 
+        catch (\Gateway\One\DataContract\Report\CreditCardError $e) 
+        {
+            // force a fail:
+            $this->assertFalse(false);
+        }        
     }
 
     public function testCreateCreditCard_Success()

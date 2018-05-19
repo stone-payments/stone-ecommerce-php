@@ -1,10 +1,8 @@
-<?php
-
-namespace Gateway\One;
+<?php namespace Gateway\One;
 
 use Gateway\One\DataContract\Request\CreateSaleRequestData\ShoppingCart;
 
-class ShoppingCartTest extends \PHPUnit_Framework_TestCase
+class ShoppingCartTest extends \PHPUnit\Framework\TestCase
 {
     public function testBirthDate()
     {
