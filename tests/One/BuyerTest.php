@@ -1,10 +1,8 @@
-<?php
-
-namespace Gateway\One;
+<?php namespace Gateway\One;
 
 use Gateway\One\DataContract\Request\CreateSaleRequestData\Buyer;
 
-class BuyerTest extends \PHPUnit_Framework_TestCase
+class BuyerTest extends \PHPUnit\Framework\TestCase
 {
     public function testBirthDate()
     {
